@@ -6,6 +6,7 @@ import plotly.express as px
 @st.cache_data
 def load_data():
     df = pd.read_csv('transactions.csv', parse_dates=['TransactionDate', 'PreviousTransactionDate'])
+    df['TransactionAmount'] *= 1500 # Conversion to NGN
     return df
 
 # Load dataset
@@ -75,5 +76,3 @@ risk_summary = df['FraudScore'].value_counts().reset_index()
 risk_summary.columns = ['FraudScore', 'Count']
 fig5 = px.bar(risk_summary, x='FraudScore', y='Count', color='Count', color_continuous_scale='Reds', title='Fraud Risk Score Distribution')
 st.plotly_chart(fig5, use_container_width=True)
-
-st.success("\U0001F389 Dashboard Generated Successfully!")
