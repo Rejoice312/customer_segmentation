@@ -39,7 +39,7 @@ with col4:
 st.subheader("\U0001F4C5 Daily Transaction Volume")
 df['TransactionDate'] = pd.to_datetime(df['TransactionDate'])
 daily_volume = df.groupby(df['TransactionDate'].dt.date)['TransactionID'].count().reset_index()
-fig1 = px.line(daily_volume, x='TransactionDate', y='TransactionID', title='Daily Transactions', markers=True)
+fig1 = px.line(daily_volume, x='TransactionDate', y='TransactionID', title='Daily Transactions', markers=True, labels = {'TransactionDate': 'Date', 'TransactionID', 'Number of Transactions')
 st.plotly_chart(fig1, use_container_width=True)
 
 # Channel Performance
@@ -51,7 +51,10 @@ st.plotly_chart(fig2, use_container_width=True)
 
 # Customer Age vs. Transaction Amount
 st.subheader("\U0001F465 Customer Age vs. Average Transaction Amount")
-age_amount = df.groupby('CustomerAge')['TransactionAmount'].mean().reset_index()
+bins = [18, 25, 35, 45, 60]
+labels = ['18-24', '25-34', '35-44', '45+']
+df['AgeGroup'] = pd.cut(df['CustomerAge'], bins=bins, labels=labels, right=False, include_lowest=True)
+age_amount = df.groupby('AgeGroup')['TransactionAmount'].mean().reset_index()
 fig3 = px.bar(age_amount, x='CustomerAge', y='TransactionAmount', color='TransactionAmount', color_continuous_scale='Tealgrn', title='Avg Transaction Amount by Age')
 st.plotly_chart(fig3, use_container_width=True)
 
