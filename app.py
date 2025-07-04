@@ -39,7 +39,7 @@ with col4:
 st.subheader("\U0001F4C5 Daily Transaction Volume")
 df['TransactionDate'] = pd.to_datetime(df['TransactionDate'])
 daily_volume = df.groupby(df['TransactionDate'].dt.date)['TransactionID'].count().reset_index()
-fig1 = px.line(daily_volume, x='TransactionDate', y='TransactionID', title='Daily Transactions', markers=True, labels = {'TransactionDate': 'Date', 'TransactionID', 'Number of Transactions')
+fig1 = px.line(daily_volume, x='TransactionDate', y='TransactionID', title='Daily Transactions', markers=True, labels = {'TransactionDate': 'Date', 'TransactionID', 'Number of Transactions'})
 st.plotly_chart(fig1, use_container_width=True)
 
 # Channel Performance
