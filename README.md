@@ -1,6 +1,6 @@
 # PalmPay Transactions Insights & Fraud Detection Dashboard
 
-Welcome to the **PalmPay Transactions Insights Dashboard**—an interactive and visually engaging analytics platform designed to help fintech teams uncover actionable insights from transaction data, detect potential fraud, and optimize business strategies.
+Welcome to the **PalmPay Transactions Insights Dashboard**—an interactive and visually engaging analytics platform designed to help fintech teams uncover actionable insights from transaction data, detect potential fraud, and optimize business strategies (Note: this Dashboard was designed eith fictitious Palmpay data).
 
 ## 📅 Project Overview
 
