@@ -54,8 +54,8 @@ st.subheader("\U0001F465 Customer Age vs. Average Transaction Amount")
 bins = [18, 25, 35, 45, 60]
 labels = ['18-24', '25-34', '35-44', '45+']
 df['AgeGroup'] = pd.cut(df['CustomerAge'], bins=bins, labels=labels, right=False, include_lowest=True)
-age_amount = df.groupby('AgeGroup')['TransactionAmount'].mean().reset_index()
-fig3 = px.bar(age_amount, x='CustomerAge', y='TransactionAmount', color='TransactionAmount', color_continuous_scale='Tealgrn', title='Avg Transaction Amount by Age')
+age_amount = df.groupby('AgeGroup', as_index = False)['TransactionAmount'].mean()
+fig3 = px.bar(age_amount, x='AgeGroup', y='TransactionAmount', color='TransactionAmount', color_continuous_scale='Tealgrn', title='Avg Transaction Amount by Age', labels = {'AgeGroup': 'Age', 'TransactionAmount': 'Average Transaction Amount'})
 st.plotly_chart(fig3, use_container_width=True)
 
 # Occupation Analysis
