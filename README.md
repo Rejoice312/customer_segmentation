@@ -1,5 +1,15 @@
 # PalmPay Transactions Insights & Fraud Detection Dashboard
 
+<p align="center">
+  <a href="https://customersegmentation-ddtbrggn9mfzd6p4heevks.streamlit.app/" target="_blank">
+    <img src="dashboard_image1.png" alt="Dashboard 1" width="45%" style="margin-right: 10px;">
+  </a>
+  <a href="https://customersegmentation-ddtbrggn9mfzd6p4heevks.streamlit.app/" target="_blank">
+    <img src="dashboard_image2.png" alt="Dashboard 2" width="45%">
+  </a>
+</p>
+
+
 Welcome to the **PalmPay Transactions Insights Dashboard**—an interactive and visually engaging analytics platform designed to help fintech teams uncover actionable insights from transaction data, detect potential fraud, and optimize business strategies (Note: this Dashboard was designed eith fictitious Palmpay data).
 
 ## 📅 Project Overview
